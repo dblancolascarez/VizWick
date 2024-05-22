@@ -1,16 +1,4 @@
-/*
-	Alex Thieme
-	30-04-2018
-
-*/
-
-/*
-	main node class for storing node information
-*/
 class TreeNode{
-
-	//TODO
-	//END TODO
 
 	//creates the next node of the tree, recursively creating its children
 	//sets parent and adds this node to the parent's children

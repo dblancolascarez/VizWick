@@ -1,12 +1,3 @@
-/*
-	Alex Thieme
-	30-04-2018
-	
-*/
-
-/*
-	main class for the tree
-*/
 class Tree{
 	
 	//reads the input and convers it to a tree

@@ -1,12 +1,3 @@
-/*
-    The class for representing the areas at where each visualisation is shown
-    Authors:
-      Tar van Krieken
-      Mehrdad Farsadyar
-    Starting Date: 18/05/2018
-*/
-
-//a class to represent visualisation areas
 class VisualisationArea{
     constructor(areaName, areaElement, optionsCreationListener){
         this.areaName = areaName; //name of the area
@@ -30,22 +21,6 @@ class VisualisationArea{
             /* send the options to the page so they can be added to the page */
             this.optionsCreationListener && this.optionsCreationListener(this.options, this.visualisation);
 
-            //handle VR content
-            if(this.wasInVR){
-                this.wasInVR = false;
-                //show this visualisation in VR if 3d
-                if(this.visualisation instanceof VIZ3D.Visualisation){
-                    VRCamera.setVisualisation(this.visualisation);
-                }else{
-                    //else find a random available 3d visualisation to show
-                    for(var vis of VisualisationHandler.getExistingVisualisations()){
-                        if(vis instanceof VIZ3D.Visualisation){
-                            VRCamera.setVisualisation(vis);
-                            break;
-                        }
-                    }
-                }
-            }
 
             console.info("Visualisation '"+visualisationClass.description.name+"' created");
         }
@@ -73,16 +48,4 @@ class VisualisationArea{
         return (this.visualisation);
     }
 
-    //VR methods
-    isInVR(){
-        if(this.visualisation)
-            return this.visualisation.isInVR();
-        return false;
-    }
-
-    //TODO
-    syncSelectedNodes(){}
-
-    //TODO
-    syncFocusedNodes(){}
 }

@@ -1,11 +1,3 @@
-/*
-    This links all the components together
-    Authors:
-      Tar van Krieken
-      Mehrdad Farsadyar
-    Starting Date: 18/05/2018
-*/
-
 window.VisualisationHandler =
 new (class VisualisationHandler{
     constructor(){
@@ -153,11 +145,6 @@ new (class VisualisationHandler{
     getVisualisationTypes(){
         return Object.keys(this.visClassCollection);
     }
-
-
-    /**
-     * SYNCRHNISATION MANAGEMENT
-     */
 
     synchronizeNode(type, node, sourceViz){
         this.synchronisationData[type] = node;
